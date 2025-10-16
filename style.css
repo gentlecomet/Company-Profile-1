@@ -149,7 +149,7 @@ nav a.active {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25); /* transparan, tidak redup */
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .page-header h1 {
@@ -157,7 +157,7 @@ nav a.active {
   z-index: 2;
   font-size: 3em;
   color: #00bfff;
-  text-shadow: 0 0 25px #00bfff, 0 0 40px #00bfff; /* neon terang */
+  text-shadow: 0 0 25px #00bfff, 0 0 40px #00bfff;
   transition: color 0.3s, text-shadow 0.3s;
 }
 
@@ -304,51 +304,81 @@ footer {
   transform: translateY(0);
 }
 
-/* ===== LIGHT THEME ===== */
+/* ===== LIGHT THEME (clean, no neon) ===== */
 body.light {
   background: #f9f9f9;
   color: #111;
 }
+
 body.light header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 body.light .logo {
   color: #0078ff;
   text-shadow: none;
 }
+
 body.light nav a {
   color: #333;
 }
+
 body.light nav a:hover,
 body.light nav a.active {
   color: #0078ff;
   text-shadow: none;
 }
-body.light .service-card {
-  background: #fff;
-  color: #000;
-  border-color: #0078ff33;
+
+body.light #theme-toggle {
+  border-color: #0078ff;
+  color: #0078ff;
 }
-body.light .overlay {
-  background: rgba(0, 120, 255, 0.1);
+
+body.light #theme-toggle:hover {
+  background: #0078ff;
+  color: #fff;
 }
-body.light .overlay h3,
-body.light .overlay p {
-  color: #000;
-}
-body.light h2,
+
 body.light .hero-text h1,
+body.light h2,
 body.light .page-header h1 {
   color: #0078ff;
   text-shadow: none;
 }
+
 body.light .page-header::after {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
 }
+
+body.light .service-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #222;
+}
+
+body.light .service-card h3 {
+  color: #0078ff;
+}
+
+body.light .service-card p {
+  color: #444;
+}
+
+body.light .overlay {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000;
+}
+
+body.light .overlay h3,
+body.light .overlay p {
+  color: #111;
+}
+
 body.light footer {
   background: #eee;
   color: #333;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -356,11 +386,9 @@ body.light footer {
   header {
     padding: 15px 30px;
   }
-
   .hero-text h1 {
     font-size: 2.3em;
   }
-
   .service-card {
     width: 45%;
   }
@@ -387,6 +415,10 @@ body.light footer {
     padding: 15px 0;
   }
 
+  body.light nav {
+    background: #fff;
+  }
+
   nav.show {
     display: flex;
   }
@@ -399,4 +431,33 @@ body.light footer {
   .portfolio-item {
     width: 100%;
   }
+}
+
+/* ===== FIX HERO LIGHT MODE ===== */
+body.light .hero {
+  background-size: cover;
+  background-position: center;
+  color: #111;
+}
+
+body.light .hero::after {
+  background: rgba(255, 255, 255, 0.2); /* lebih terang, bukan abu gelap */
+}
+
+body.light .hero-text h1 {
+  color: #0078ff;
+  text-shadow: none;
+}
+
+body.light .hero-text p {
+  color: #333;
+}
+
+body.light .btn {
+  background: #0078ff;
+  color: #fff;
+}
+
+body.light .btn:hover {
+  box-shadow: 0 0 10px rgba(0, 120, 255, 0.4);
 }
