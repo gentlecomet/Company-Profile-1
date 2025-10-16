@@ -361,7 +361,32 @@ body.light footer {
     font-size: 1.8em;
   }
 
+  /* Warna teks menu aktif (Portofolio) sesuai tema */
+nav a.active {
+  color: #f1f1f1; /* putih untuk mode gelap */
+}
+
+/* Saat mode terang, ubah jadi hitam */
+body.light nav a.active {
+  color: #000;
+}
+
+/* ===== PERBAIKAN WARNA TEKS DI CARD PORTOFOLIO ===== */
+.portfolio-item .overlay h3,
+.portfolio-item .overlay p {
+  color: #fff; /* default: putih untuk dark mode */
+}
+
+body.light .portfolio-item .overlay {
+  background: rgba(0, 120, 255, 0.1); /* biru muda tapi lebih lembut */
+}
+
+body.light .portfolio-item .overlay h3,
+body.light .portfolio-item .overlay p {
+  color: #000; /* teks hitam di light mode */
+}
   .service-card, .portfolio-item {
     width: 100%;
   }
 }
+
