@@ -1,0 +1,367 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  transition: background 0.4s, color 0.4s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 191, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6em;
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #ccc;
+  font-weight: 500;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid #00bfff;
+  color: #00bfff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+/* ===== MENU TOGGLE (MOBILE) ===== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #00bfff;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #00bfff;
+  text-shadow: 0 0 20px #00bfff;
+}
+
+.hero-text p {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.btn {
+  background: #00bfff;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px #00bfff;
+  background: #00bfff;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  height: 45vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00bfff;
+  text-shadow: 0 0 20px #00bfff;
+  position: relative;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CONTENT SECTIONS ===== */
+section {
+  padding: 80px 10%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+/* ===== SERVICES ===== */
+.services .service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.service-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #00bfff;
+}
+
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  margin: 15px;
+  color: #00bfff;
+}
+
+.service-card p {
+  margin: 0 15px 20px;
+  color: #ccc;
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: brightness(80%);
+  transition: 0.3s;
+}
+
+.portfolio-item:hover img {
+  filter: brightness(100%);
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 191, 255, 0.15);
+  color: white;
+  width: 100%;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #1a1a1a;
+  border: 1px solid rgba(0, 191, 255, 0.3);
+  color: #f1f1f1;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #00bfff;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #111;
+  color: #ccc;
+  border-top: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+/* ===== ANIMATION (FADE-IN) ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== LIGHT THEME ===== */
+body.light {
+  background: #f9f9f9;
+  color: #111;
+}
+body.light header {
+  background: rgba(255, 255, 255, 0.9);
+}
+body.light .logo {
+  color: #0078ff;
+  text-shadow: none;
+}
+body.light nav a:hover {
+  text-shadow: none;
+}
+body.light .service-card {
+  background: #fff;
+  color: #000;
+  border-color: #0078ff33;
+}
+body.light footer {
+  background: #eee;
+  color: #333;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3em;
+  }
+
+  .service-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background: #111;
+    margin-top: 10px;
+    display: none;
+    padding: 15px 0;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8em;
+  }
+
+  .service-card, .portfolio-item {
+    width: 100%;
+  }
+}
